@@ -1,0 +1,468 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.home-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.home-header {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+.home-header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.home-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.home-main-content {
+    padding: 40px;
+}
+
+.home-upload-section {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    border: 2px dashed #dee2e6;
+    transition: all 0.3s ease;
+}
+
+.home-upload-section:hover {
+    border-color: #4facfe;
+    background: #f0f8ff;
+}
+
+.home-upload-section h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.home-upload-section p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.home-file-upload-area {
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.home-file-upload-area:hover {
+    border-color: #4facfe;
+    background: #f0f8ff;
+}
+
+.home-file-upload-area.home-dragover {
+    border-color: #4facfe;
+    background: #e3f2fd;
+}
+
+.home-file-input {
+    display: none;
+}
+
+.home-upload-icon {
+    font-size: 3rem;
+    color: #4facfe;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.home-btn {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(79, 172, 254, 0.3);
+    width: 100%;
+    margin-top: 15px;
+}
+
+.home-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 172, 254, 0.4);
+}
+
+.home-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.home-file-info {
+    margin-top: 15px;
+    display: none;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.home-file-info-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.home-loading {
+    display: none;
+    text-align: center;
+    padding: 20px;
+}
+
+.home-spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #4facfe;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 15px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .home-header h1 {
+        font-size: 2rem;
+    }
+
+    .home-main-content {
+        padding: 20px;
+    }
+
+    .home-container {
+        margin: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 2px;
+    }
+
+    .home-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .home-header p {
+        font-size: 1rem;
+    }
+    .home-header{
+        padding: 20px;
+    }
+
+    .home-main-content {
+        padding: 15px;
+    }
+
+    .home-container {
+        margin: 10px;
+    }
+    .home-upload-section{
+        padding: 15px;
+    }
+    .home-upload-section p{
+        font-size: 1rem;
+    }
+    .home-upload-section h2{
+        font-size: 1.2rem;
+    }
+}
+
+
+
+.create-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.create-header {
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+.create-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.create-header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.create-content {
+    padding: 40px;
+}
+
+.create-puzzle-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 1024px) {
+    .create-puzzle-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+.create-puzzle-item {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.create-puzzle-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.create-puzzle-item h3 {
+    color: #333;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #4CAF50;
+    display: inline-block;
+}
+
+.create-puzzle-item p {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.create-puzzle-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.create-puzzle-image:hover {
+    transform: scale(1.02);
+}
+
+.create-pixelated-section {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+}
+
+.create-pixelated-section h3 {
+    border-bottom-color: #ff6b9d;
+    color: white;
+}
+
+.create-pixelated-section p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.create-download-section {
+    margin-top: 40px;
+    padding: 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    text-align: center;
+}
+
+.create-download-section h3 {
+    color: white;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+
+.create-download-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.create-download-btn {
+    background: white;
+    color: #667eea;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.create-download-btn:hover {
+    background: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.create-back-btn {
+    background: #4CAF50;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 30px;
+    transition: all 0.3s ease;
+}
+
+.create-back-btn:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.create-instructions {
+    background: #f8f9fa;
+    border-left: 4px solid #4CAF50;
+    padding: 20px;
+    margin: 30px 0;
+    border-radius: 5px;
+}
+
+.create-instructions h4 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.create-instructions ul {
+    color: #666;
+    padding-left: 20px;
+}
+
+.create-instructions li {
+    margin-bottom: 5px;
+}
+
+.create-error-message {
+    background: #ffebee;
+    color: #c62828;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.create-loading {
+    display: none;
+    text-align: center;
+    padding: 40px;
+}
+
+.create-spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #4CAF50;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 2px;
+    }
+
+    .create-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .create-header p {
+        font-size: 1rem;
+    }
+    .create-header{
+        padding: 20px;
+    }
+
+    .create-content {
+        padding: 15px;
+    }
+
+    .create-container {
+        margin: 10px;
+    }
+    .create-container p{
+        font-size: 1rem;
+    }
+    .create-container h2{
+        font-size: 1.2rem;
+    }
+}

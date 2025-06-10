@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle Created Successfully</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+
+<body>
+    <div class="create-container">
+        <div class="create-header">
+            <h1>🧩 Puzzle Created Successfully!</h1>
+            <p>Your custom 300-piece color-by-number puzzle is ready</p>
+        </div>
+
+        <div class="create-content">
+            {% if data %}
+            {% if data.pixelated_img and data.puzzle_key and data.key_img %}
+            <div class="create-puzzle-grid">
+                <div class="create-puzzle-item create-pixelated-section">
+                    <h3>📱 Pixelated Reference</h3>
+                    <p>This shows how your image looks in puzzle grid format</p>
+                    <img src="{{ data.pixelated_img }}" alt="Pixelated Puzzle Reference" class="create-puzzle-image"
+                        id="create-pixelated-img">
+                </div>
+                <div class="create-puzzle-item">
+                    <h3>🗝️ Original Puzzle Key</h3>
+                    <p>Use this as your main reference for solving the puzzle</p>
+                    <img src="{{ data.puzzle_key }}" alt="Original Puzzle Key" class="create-puzzle-image" id="create-puzzle-key">
+                </div>
+                <div class="create-puzzle-item">
+                    <h3>🖨️ Print-Compensated Key</h3>
+                    <p>Use this version if you're printing double-sided (automatically flipped for correct printing)</p>
+                    <img src="{{ data.key_img }}" alt="Print-Compensated Puzzle Key" class="create-puzzle-image"
+                        id="create-compensated-key">
+                </div>
+            </div>
+
+            <div class="create-instructions">
+                <h4>📋 How to Use Your Puzzle:</h4>
+                <ul>
+                    <li><strong>Colors:</strong> Red, Blue, Green, Orange, Purple (5 colors total)</li>
+                    <li><strong>Numbers:</strong> Each color has numbered pieces (1-60 per color)</li>
+                    <li><strong>Rotation:</strong> Numbers may be rotated - look for dots on 6 and 9 for orientation
+                    </li>
+                    <li><strong>Grid:</strong> 15×20 grid = 300 total pieces</li>
+                    <li><strong>Printing:</strong> Use the print-compensated version for double-sided printing</li>
+                </ul>
+            </div>
+
+            <div class="create-download-section">
+                <h3>💾 Download Your Puzzle</h3>
+                <div class="create-download-buttons">
+                    <button class="create-download-btn" onclick="downloadImage('create-pixelated-img', 'pixelated-reference.png')">
+                        📱 Download Reference
+                    </button>
+                    <button class="create-download-btn" onclick="downloadImage('create-puzzle-key', 'puzzle-key.png')">
+                        🗝️ Download Original Key
+                    </button>
+                    <button class="create-download-btn"
+                        onclick="downloadImage('create-compensated-key', 'print-compensated-key.png')">
+                        🖨️ Download Print Key
+                    </button>
+                </div>
+            </div>
+            {% else %}
+            <div class="create-error-message">
+                <h3>⚠️ Incomplete Puzzle Data</h3>
+                <p>Some puzzle images are missing. Please try creating the puzzle again.</p>
+            </div>
+            {% endif %}
+            {% else %}
+            <div class="create-error-message">
+                <h3>❌ No Puzzle Data Available</h3>
+                <p>No puzzle data was provided. Please go back and create a new puzzle.</p>
+            </div>
+            {% endif %}
+
+            <div class="create-text-center">
+                <a href="{{ url_for('home') }}" class="create-back-btn">🏠 Create Another Puzzle</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="create-loading" id="create-loading">
+        <div class="create-spinner"></div>
+        <p>Processing download...</p>
+    </div>
+
+
+
+    <script src="../static/js/create.js"></script>
+</body>
+
+</html>

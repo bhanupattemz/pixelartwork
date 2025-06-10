@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle Face Creator</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+    <div class="home-container">
+        <div class="home-header">
+            <h1>🧩 Puzzle Face Creator</h1>
+            <p>Transform your images into beautiful numbered puzzles</p>
+        </div>
+
+        <div class="home-main-content">
+            <div class="home-upload-section">
+                <h2>Upload Your Image</h2>
+                <p>Select an image file to create your puzzle:</p>
+                
+                <form id="fileUploadForm" action="/create" method="post" enctype="multipart/form-data">
+                    <div class="home-file-upload-area" onclick="document.getElementById('fileInput').click()">
+                        <span class="home-upload-icon">📷</span>
+                        <p><strong>Click to select image file</strong></p>
+                        <p style="font-size: 0.9rem; color: #666; margin-top: 10px;">
+                            Supports: PNG, JPG, JPEG, GIF, BMP
+                        </p>
+                    </div>
+                    <input type="file" id="fileInput" name="file" class="home-file-input" accept="image/*" onchange="handleFileSelect(this)">
+                    
+                    <div id="fileInfo" class="home-file-info">
+                        <div class="home-file-info-content">
+                            <span>📄</span>
+                            <div id="fileDetails"></div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="home-btn" disabled id="fileSubmitBtn">
+                        Create Puzzle from File
+                    </button>
+                </form>
+            </div>
+
+            <div class="home-loading" id="loadingDiv">
+                <div class="home-spinner"></div>
+                <p>Creating your puzzle... This may take a few moments.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../static/js/home.js"></script>
+</body>
+</html>
